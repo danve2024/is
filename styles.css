@@ -278,20 +278,22 @@ select {
 
 /* Основной контент */
 .content {
-    margin: 2%;
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Карточки в файле interships.html */
 .card-box{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     margin: auto;
     width: 100%;
-    flex-wrap: wrap; 
+    box-sizing: border-box;
 }
 
 .content-card {
