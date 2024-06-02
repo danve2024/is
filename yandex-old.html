@@ -10,14 +10,7 @@
   <title>Яндекс</title>
 </head>
 <body background="images/bg.jpg">
-  <header>
-    <div class="header-div">
-      <button class="menu_button" onclick="toggleMenu()">☰</button>
-      <button class="profile_button"><a href="profile.html">👤</a></button>
-      <button class="mail_button"><a href="feedback.html">💬</a></button>
-      <img src="images/logo.jpg" class="logo">
-    </div>
-  </header>
+  <header></header>
   <div id="menu">
     <p class="menu_item"><a href="internships.html" style="color: white;">Стажировки</a><br></p>
     <p class="menu_item"><a href="digest.html" style="color: white;">Дайджест</a></p>
@@ -51,9 +44,22 @@
         <li><b>Места:</b> доступны</li>
     </ul>
   </div>
-  <footer>
-    <p class="footer-p"><a href="feedback.html" style="color: black;">Обратная связь</a>|<a href="profile.html" style="color: black;">Профиль</a>|<a href="tips.html" style="color: black;">Советы от карьерного консультанта</a><br>© Letovo Internships, 2024</p>
-  </footer>
+  <footer></footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.querySelector('header').innerHTML = data;
+        });
+
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.querySelector('footer').innerHTML = data;
+        });
+    });
+  </script>
   <script>
     // Выпадающее меню
     function toggleMenu() {
