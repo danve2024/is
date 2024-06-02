@@ -4,6 +4,9 @@
     scrollbar-color: #aaa white;
     border-radius: 5px;
     scrollbar-width: thin;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -13,6 +16,9 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
 h1, h2, h3, h4, p, summary, ol, ul {
@@ -21,37 +27,12 @@ h1, h2, h3, h4, p, summary, ol, ul {
     margin: 20px 0;
 }
 
-h1 {
-    font-size: 35px;
-}
-
-h2 {
-    font-size: 30px;
-}
-
-h3 {
-    font-size: 30px;
-}
-
-h4 {
-    font-size: 20px;
-}
-
-p {
-    font-size: 30px;
-}
-
-summary {
-    font-size: 30px;
-}
-
-ol {
-    font-size: 25px;
-}
-
-ul {
-    font-size: 25px;
-}
+/* Размеры шрифтов */
+h1 { font-size: 35px; }
+h2 { font-size: 30px; }
+h3 { font-size: 30px; }
+h4 { font-size: 20px; }
+p, summary, ol, ul { font-size: 20px; }
 
 a {
     text-decoration: none;
@@ -148,7 +129,7 @@ select {
 /* Header */
 .header-div {
     position: fixed;
-    background-color: darkslateblue;
+    background: linear-gradient(darkslateblue, darkblue);
     color: white;
     top: 0;
     left: 0;
@@ -307,7 +288,7 @@ select {
 /* Карточки в файле interships.html */
 .card-box{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: auto;
     width: 100%;
     flex-wrap: wrap; 
@@ -320,18 +301,18 @@ select {
     border-radius: 10px;
     box-sizing: border-box;
     width: 25%;
-    height: calc(100% + 88px); /* Изменено на фиксированное значение */
+    height: 350px;
     padding-top: 44px;
     padding-bottom: 44px;
-    margin: 44px 20px auto;
+    margin: 20px;
     display: flex;
-    flex-direction: column; /* Добавлено для вертикального выравнивания содержимого */
+    flex-direction: column;
     padding-left: 32px;
     padding-right: 32px;
     transition: all 0.3s ease;
     min-width: 300px;
     align-items: center;
-    text-align: center; /* Добавлено для центрирования текста */
+    text-align: center;
 }
 
 .content-card:hover {
@@ -356,36 +337,36 @@ select {
 /* Медиа-запрос для устройств с шириной экрана менее 768px */
 @media (max-width: 768px) {
     .content-card {
-        width: 90%; /* Уменьшение ширины карточки */
-        height: auto; /* Автоматическая высота */
-        padding: 20px; /* Уменьшение отступов */
-        margin: 20px auto; /* Уменьшение отступов */
+        width: 90%;
+        height: auto;
+        padding: 15px;
+        margin: 15px auto;
     }
     
     .content-card p {
-        font-size: 14px; /* Уменьшение размера шрифта */
+        font-size: 14px;
     }
 
     .content-card h1, .content-card h2, .content-card h3 {
-        font-size: 18px; /* Уменьшение размера заголовков */
+        font-size: 18px;
     }
 }
 
 /* Медиа-запрос для устройств с шириной экрана менее 480px */
 @media (max-width: 480px) {
     .content-card {
-        width: 100%; /* Использование всей ширины экрана */
-        height: auto; /* Автоматическая высота */
-        padding: 15px; /* Уменьшение отступов */
-        margin: 15px auto; /* Уменьшение отступов */
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        margin: 10px auto;
     }
 
     .content-card p {
-        font-size: 12px; /* Ещё большее уменьшение размера шрифта */
+        font-size: 12px;
     }
 
     .content-card h1, .content-card h2, .content-card h3 {
-        font-size: 16px; /* Ещё большее уменьшение размера заголовков */
+        font-size: 16px;
     }
 }
 
