@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Дайджест</title>
+</head>
+<body background="images/bg.jpg" id="body">
+  <header>
+    <div class="header-div">
+      <button class="menu_button" onclick="toggleMenu()" title="Меню">☰</button>
+      <button class="profile_button" title="Аккаунт"><a href="profile.html">👤</a></button>
+      <button class="mail_button" title="Обратная связь"><a href="mailto:daria.lazareva@letovo.ru">💬</a></button>
+      <button class="theme_button" onclick="changeTheme()" title="Сменить тему">☀︎</button>
+      <img src="images/logo.jpg" class="logo">
+    </div>
+  </header>
+  <h1><br><br>Дайджест</h1>
+  <div id="menu">
+    <p class="menu_item"><a href="internships.html" style="color: white;">Стажировки</a><br></p>
+    <p class="menu_item"><a href="digest.html" style="color: white;">Дайджест</a></p>
+    <p class="menu_item"><a href="tips.html" style="color: white;">Советы</a></p>
+    <p class="menu_item"><a href="https://forms.yandex.ru/u/640f134573cee729c3a2cee6/" style="color: white;">Подать заявку</a></p>
+    <p class="menu_item"><a href="https://forms.yandex.ru/u/647dc20eeb61460773e9a071/" style="color: white;">Рефлексия</a></p>
+    <p class="menu_item"><a href="gallery.html" style="color: white;">Галерея</a></p>
+  </div>
+  <div class="content">
+    <select id="list" onchange="change();">
+      <option>Направление</option>
+      <option>IT</option>
+      <option>Экономика</option>
+      <option>Маркетинг</option>
+      <option>Биология</option>
+      <option>Медицина</option>
+      <option>Химия</option>
+      <option>Физика</option>
+      <option>Проектный менеджмент</option>
+      <option>Право</option>
+      <option>Лингвистика</option>
+      <option>История</option>
+      <option>Литература</option>
+      <option>Социология</option>
+      <option>Журналистика</option>
+      <option>Техника</option>
+    </select>
+    <div class="card-box">
+        <div class="content-card IT marketing PR soft">
+          <a href="yandex.html">
+                <img src="images/yandex.jpeg" class="card-image">
+                <h1>Яндекс</h1>
+          </a>
+        </div>
+        <div class="content-card economics IT leadership other tech rights hum soft">
+          <a href="frii.html">
+                  <img src="images/frii.jpg" class="card-image">
+                  <h1>ФРИИ</h1>
+          </a>
+      </div>
+      <div class="content-card biology linguistics economics science hum">
+        <a href="niuvse.html">
+                <img src="images/niuvse.png" class="card-image">
+                <h1>НИУ ВШЭ</h1>
+        </a>
+      </div>
+      <div class="content-card IT">
+        <a href="vk.html">
+                <img src="images/vk.png" class="card-image">
+                <h1>VK</h1>
+        </a>
+      </div>
+      <div class="content-card IT">
+        <a href="letovo.html">
+                <img src="images/letovo.png" class="card-image">
+                <h1>Летово</h1>
+        </a>
+      </div>
+      <div class="content-card sociology marketing science hum soft">
+        <a href="pik.html">
+                <img src="images/pik.png" class="card-image">
+                <h1>ПИК</h1>
+        </a>
+      </div>
+      <div class="content-card literature hum">
+        <a href="samokat.html">
+                <img src="images/samokat.png" class="card-image">
+                <h1>Самокат</h1>
+        </a>
+      </div>
+      <div class="content-card physics chemistry science">
+        <a href="nivc.html">
+                <img src="images/nivc.jpg" class="card-image">
+                <h1>НИВЦ МГУ</h1>
+        </a>
+      </div>
+      <div class="content-card IT linguistics">
+        <a href="speechup.html">
+                <img src="images/speechup.png" class="card-image">
+                <h1>SpeechUp</h1>
+        </a>
+      </div>
+      <div class="content-card medicine science">
+        <a href="mir_detstva.html">
+                <img src="images/mir_detstva.png" class="card-image">
+                <h2>Мир детства</h2>
+        </a>
+      </div>
+      <div class="content-card medicine science">
+        <a href="amediclinic.html">
+                <img src="images/amedclinic.jpg" class="card-image">
+                <h1>A Medclinic</h1>
+        </a>
+      </div>
+      <div class="content-card rights hum">
+        <a href="yakovlev&partners.html">
+                <img src="images/yakovlev&partners.jpg" class="card-image">
+                <h2>Яковлев и Партнёры</h2>
+        </a>
+      </div>
+      <div class="content-card history marketing hum">
+        <a href="jew.html">
+                <img src="images/jew.png" class="card-image">
+                <h4>Еврейский музей и Центр толерантности</h4>
+        </a>
+      </div>
+      <div class="content-card leadership soft">
+        <a href="portgm.html">
+                <img src="images/portgm.jpg" class="card-image">
+                <h4>Проектный офис по развитию туризма и гостеприимства Москвы</h4>
+        </a>
+      </div>
+      <div class="content-card journalism">
+        <a href="znanie.html">
+                <img src="images/znanie.jpg" class="card-image">
+                <h4>Российское общество "Знание"</h4>
+        </a>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p class="footer-p"><a href="mailto: daria.lazareva@letovo.ru" style="color: black;">Обратная связь</a>|<a href="profile.html" style="color: black;">Профиль</a>|<a href="tips.html" style="color: black;">Советы от карьерного консультанта</a><br>© Letovo Internships, 2024</p>
+  </footer>
+  <script type="text/javascript" src="digest.js"></script>
+</body>
+</html>
