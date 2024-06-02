@@ -7,18 +7,7 @@
   <title>Стажировки</title>
 </head>
 <body id="body">
-  <header>
-    <div class="header-div">
-      <button class="menu_button" onclick="toggleMenu()" title="Меню">☰</button>
-      <button class="profile_button" title="Аккаунт"><a href="profile.html">👤</a></button>
-      <button class="mail_button" title="Обратная связь"><a href="feedback.html">💬</a></button>
-      <button class="theme_button" onclick="changeTheme()" title="Сменить тему">☀︎</button>
-      <img src="images/logo.jpg" class="logo">
-      <div class="progress-container">
-        <div class="progress-bar" id="myBar"></div>
-      </div>
-    </div>
-  </header>
+  <header></header>
   <h1><br><br>Стажировки</h1>
   <div id="menu">
     <p class="menu_item"><a href="internships.html" style="color: white;">Стажировки</a><br></p>
@@ -122,16 +111,22 @@
       </div>
     </div>
   </div>
-  <footer>
-    <p class="footer-p">
-        <a href="feedback.html" class="footer-link">Обратная связь</a>
-        <span class="footer-separator">|</span>
-        <a href="profile.html" class="footer-link">Профиль</a>
-        <span class="footer-separator">|</span>
-        <a href="tips.html" class="footer-link">Советы от карьерного консультанта</a>
-        <br>© Letovo Internships, 2024
-    </p>
-</footer>
+  <footer></footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.querySelector('header').innerHTML = data;
+        });
+
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.querySelector('footer').innerHTML = data;
+        });
+    });
+  </script>
   <script type="text/javascript" src="scrollbar.js"></script>
   <script type="text/javascript" src="script.js"></script>
 </body>
