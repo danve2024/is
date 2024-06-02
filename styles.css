@@ -197,6 +197,7 @@ select {
 
 /* Кнопки в header'е */
 .menu_button {
+    border-radius: 0px;
     text-align: center;
     font-size: 35px;
     position: fixed;
@@ -219,6 +220,7 @@ select {
 
 
 .profile_button {
+    border-radius: 0px;
     text-align: center;
     font-size: 35px;
     position: fixed;
@@ -239,6 +241,7 @@ select {
 }
 
 .mail_button {
+    border-radius: 0px;
     text-align: center;
     font-size: 35px;
     position: fixed;
@@ -259,6 +262,7 @@ select {
 }
 
 .theme_button {
+    border-radius: 0px;
     text-align: center;
     font-size: 35px;
     position: fixed;
