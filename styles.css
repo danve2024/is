@@ -163,6 +163,12 @@ select {
     width: auto;
 }
 
+@media only screen and (max-width: 768px) {
+    .logo {
+        display: none;
+    }
+}
+
 .logo:hover {
     transform: scale(1.05);
 }
