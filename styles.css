@@ -10,51 +10,47 @@ body {
     cursor: url('images/cursor.png'), auto;
 }
 
-h1 {
-    font-size: 35px;
+h1, h2, h3, h4, p, summary, ol, ul {
     font-family: 'Roboto', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
-    margin: 30px;
+    margin: 20px 0;
 }
 
+h1 {
+    font-size: 35px;
+}
 
 h2 {
     font-size: 30px;
-    font-family: 'Roboto', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-align: center;
-    margin: 30px;
 }
 
 h3 {
     font-size: 30px;
-    font-family: 'Roboto', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 h4 {
     font-size: 20px;
-    font-family: 'Roboto', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-align: center;
-    margin: 30px;
 }
 
 p {
     font-size: 30px;
-    font-family: 'Roboto', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 summary {
     font-size: 30px;
-    font-family: 'Roboto', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 ol {
     font-size: 25px;
-    font-family: 'Roboto', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 ul {
     font-size: 25px;
-    font-family: 'Roboto', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 img {
@@ -296,8 +292,11 @@ select {
 
 /* Основной контент */
 .content {
-    margin: auto;
-    width: 80%;
+    margin: 2%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* Карточки в файле interships.html */
@@ -309,23 +308,25 @@ select {
     flex-wrap: wrap; 
 }
 
-.content-card{
+.content-card {
     justify-content: center;
     backdrop-filter: blur(35px);
     box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.4);
     border-radius: 10px;
     box-sizing: border-box;
     width: 25%;
-    height: calc(width*2);
+    height: calc(100% + 88px); /* Изменено на фиксированное значение */
     padding-top: 44px;
-    padding-bottom: 44px;  
+    padding-bottom: 44px;
     margin: 44px 20px auto;
     display: flex;
+    flex-direction: column; /* Добавлено для вертикального выравнивания содержимого */
     padding-left: 32px;
-    padding-right: 32px;  
+    padding-right: 32px;
     transition: all 0.3s ease;
     min-width: 300px;
     align-items: center;
+    text-align: center; /* Добавлено для центрирования текста */
 }
 
 .content-card:hover {
@@ -335,12 +336,52 @@ select {
 
 .card-image{
     width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
     opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .card-image:hover {
     transform: scale(1.2);
     opacity: 1;
+}
+
+/* Медиа-запрос для устройств с шириной экрана менее 768px */
+@media (max-width: 768px) {
+    .content-card {
+        width: 90%; /* Уменьшение ширины карточки */
+        height: auto; /* Автоматическая высота */
+        padding: 20px; /* Уменьшение отступов */
+        margin: 20px auto; /* Уменьшение отступов */
+    }
+    
+    .content-card p {
+        font-size: 14px; /* Уменьшение размера шрифта */
+    }
+
+    .content-card h1, .content-card h2, .content-card h3 {
+        font-size: 18px; /* Уменьшение размера заголовков */
+    }
+}
+
+/* Медиа-запрос для устройств с шириной экрана менее 480px */
+@media (max-width: 480px) {
+    .content-card {
+        width: 100%; /* Использование всей ширины экрана */
+        height: auto; /* Автоматическая высота */
+        padding: 15px; /* Уменьшение отступов */
+        margin: 15px auto; /* Уменьшение отступов */
+    }
+
+    .content-card p {
+        font-size: 12px; /* Ещё большее уменьшение размера шрифта */
+    }
+
+    .content-card h1, .content-card h2, .content-card h3 {
+        font-size: 16px; /* Ещё большее уменьшение размера заголовков */
+    }
 }
 
 /* Инфографика о стажировках */
@@ -457,4 +498,5 @@ footer:hover {
 
 .footer-p {
     margin: 0;
+    font-size: 20px;
 }
