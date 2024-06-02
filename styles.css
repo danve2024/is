@@ -296,7 +296,7 @@ select {
 
 /* Основной контент */
 .content {
-    margin: 0px auto;
+    margin: auto;
     width: 80%;
 }
 
@@ -304,7 +304,7 @@ select {
 .card-box{
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+    margin: auto;
     width: 100%;
     flex-wrap: wrap; 
 }
@@ -319,7 +319,7 @@ select {
     height: calc(width*2);
     padding-top: 44px;
     padding-bottom: 44px;  
-    margin: 44px 20px;
+    margin: auto;
     display: flex;
     padding-left: 32px;
     padding-right: 32px;  
