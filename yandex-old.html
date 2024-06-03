@@ -11,11 +11,7 @@
 </head>
 <body background="images/bg.jpg">
   <header></header>
-  <div id="menu">
-    <p class="menu_item"><a href="internships.html" style="color: white;">Стажировки</a><br></p>
-    <p class="menu_item"><a href="digest.html" style="color: white;">Дайджест</a></p>
-    <p class="menu_item"><a href="tips.html" style="color: white;">Советы</a></p>
-  </div>
+  <div id="menu"></div>
   <div class="content">
     <p>Известная своей поисковой системой, онлайн-сервисами и продуктами, работающими на основе искусственного интеллекта, компания Яндекс является значимым игроком в технологической индустрии и предлагает широкий спектр возможностей для начинающих специалистов в рамках своих программ стажировок. Яндекс предоставляет стажерам стимулирующую среду для обучения, роста и участия в инновационных проектах, которые формируют будущее технологий.</p>
     <img src="images/yandex3.png" id="slider">
@@ -51,6 +47,12 @@
         .then(response => response.text())
         .then(data => {
           document.querySelector('header').innerHTML = data;
+        });
+
+      fetch('menu.html')  // Добавляем загрузку меню
+        .then(response => response.text())
+        .then(data => {
+          document.querySelector('#menu-container').innerHTML = data;
         });
 
       fetch('footer.html')

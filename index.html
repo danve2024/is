@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <div class="header">
+    <h1><br><br>О Сайте</h1>
+  </div>
+  <title>О Сайте</title>
+</head>
+<body id="body">
+  <header></header>
+  <div id="menu-container"></div>
+  <div class="content">
+    <p>Этот сайт создан в рамках социального проекта с целью упростить
+       процедуру поиска и сбора информации для стажировок в компаниях,
+       с которыми сотрудничает “Летово”, путём создания единого информационного ресурса
+       с удобной навигацией и структурой информации.</p>
+    <p>Наша миссия - создать единое окно со всей необходимой актуальной информацией про стажировки.</p>
+    <p><b>Возможности сайта включают в себя:</b></p>
+    <ol>
+      <li>В одном месте увидеть все предлагаемые вакансии для стажировок в организациях, с которыми сотрудничает Летово, узнать требования к соискателю и детали этой вакансии, а также ознакомиться с подробной информацией об организациях. </li><br>
+      <li>Интерактивный дайджест профессий по выбранным опциям поможет подобрать подходящие вакансии по направлению деятельности.</li><br>
+      <li>Раздел полезных советов от карьерного консультанта школы: как успешно пройти собеседование, как провести лето с пользой, как наработать стаж, как расставить приоритеты при выборе профессии и т.д.</li><br>
+      <li>Возможность обратной связи с карьерным консультантом школы и разработчиками, с помощью которой можно будет задать вопрос или оставить комментарий.</li>
+    </ol> 
+  </div>
+  <footer></footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.querySelector('header').innerHTML = data;
+        });
+
+      fetch('menu.html')  // Добавляем загрузку меню
+        .then(response => response.text())
+        .then(data => {
+          document.querySelector('#menu-container').innerHTML = data;
+        });
+
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.querySelector('footer').innerHTML = data;
+        });
+    });
+  </script>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

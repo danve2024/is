@@ -11,14 +11,7 @@
 </head>
 <body background="images/bg.jpg" id="body">
   <header></header>
-  <div id="menu">
-    <p class="menu_item"><a href="internships.html" style="color: white;">Стажировки</a><br></p>
-    <p class="menu_item"><a href="digest.html" style="color: white;">Дайджест</a></p>
-    <p class="menu_item"><a href="tips.html" style="color: white;">Советы</a></p>
-    <p class="menu_item"><a href="https://forms.yandex.ru/u/640f134573cee729c3a2cee6/" style="color: white;">Подать заявку</a></p>
-    <p class="menu_item"><a href="https://forms.yandex.ru/u/647dc20eeb61460773e9a071/" style="color: white;">Рефлексия</a></p>
-    <p class="menu_item"><a href="gallery.html" style="color: white;">Галерея</a></p>
-  </div>
+  <div id="menu"></div>
   <div class="content">
     <h3>Программа</h3>
     <ol>
@@ -57,6 +50,12 @@
         .then(response => response.text())
         .then(data => {
           document.querySelector('header').innerHTML = data;
+        });
+
+      fetch('menu.html')  // Добавляем загрузку меню
+        .then(response => response.text())
+        .then(data => {
+          document.querySelector('#menu-container').innerHTML = data;
         });
 
       fetch('footer.html')
