@@ -364,6 +364,10 @@ select {
 
 /* Медиа-запрос для устройств с шириной экрана менее 768px */
 @media (max-width: 768px) {
+    .header-div {
+        padding: 5px 0;
+    }
+    
     .content-card {
         width: 90%;
         height: auto;
@@ -389,6 +393,11 @@ select {
 
 /* Медиа-запрос для устройств с шириной экрана менее 480px */
 @media (max-width: 480px) {
+
+    .header-div {
+        padding: 5px 0;
+    }
+
     .content-card {
         width: 100%;
         height: auto;
@@ -501,9 +510,13 @@ select {
 
 /* Progress bar */
 .progress-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
     height: 8px;
     background: #ccc;
+    z-index: 1000;
 }
   
 .progress-bar {
