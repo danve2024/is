@@ -378,6 +378,10 @@ select {
     .content-card h1, .content-card h2, .content-card h3 {
         font-size: 18px;
     }
+
+    .card-image{
+        height: auto;
+    }
 }
 
 /* Медиа-запрос для устройств с шириной экрана менее 480px */
