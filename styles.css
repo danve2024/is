@@ -548,6 +548,7 @@ footer {
 
 .footer-link:hover {
     color: #004B8F;
+    background: linear-gradient(rgb(83, 75, 134), lightblue);
 }
 
 .footer-separator {
