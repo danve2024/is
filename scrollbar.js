@@ -1,11 +1,9 @@
-document.addEventListener("DOMContentLoaded", function() {
-  updateProgressBar();
-  window.onscroll = function() {
-      updateProgressBar();
-  };
-});
-
 function updateProgressBar() {
+  var myBar = document.getElementById("myBar");
+  if (!myBar) {
+    return; // Если элемента нет, выходим из функции
+  }
+  
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   var scrolled = (winScroll / height) * 100;
@@ -14,3 +12,10 @@ function updateProgressBar() {
 
   document.getElementById("myBar").style.width = scrolled + "%";
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  window.onscroll = function() {
+      updateProgressBar();
+  };
+  updateProgressBar();
+});
