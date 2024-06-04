@@ -181,7 +181,7 @@ select {
     filter: blur(1px);
     padding-left: 50px;
     text-align: left;
-    line-height: 70px;
+    line-height: 60px;
     transition: all 1s ease;
 }
 
@@ -193,6 +193,7 @@ select {
 
 .menu_item:hover {
     filter: blur(0);
+    background: linear-gradient(darkslateblue, lightblue);
 }
 
 #menu {
