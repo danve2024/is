@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style> body { visibility: hidden; } </style>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <div class="header">
     <h1><br><br>Российское общество «Знание»</h1>
@@ -24,26 +25,21 @@
   <footer></footer>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-          document.querySelector('header').innerHTML = data;
-          var script = document.createElement('script');
-          script.src = 'scrollbar.js';
-          document.body.appendChild(script);
-        });
+      Promise.all([
+        fetch('header.html').then(response => response.text()),
+        fetch('menu.html').then(response => response.text()),
+        fetch('footer.html').then(response => response.text())
+      ]).then(([headerData, menuData, footerData]) => {
+        document.querySelector('header').innerHTML = headerData;
+        document.querySelector('#menu').innerHTML = menuData;
+        document.querySelector('footer').innerHTML = footerData;
 
-      fetch('menu.html')
-        .then(response => response.text())
-        .then(data => {
-          document.querySelector('#menu').innerHTML = data;
-        });
+        var script = document.createElement('script');
+        script.src = 'scrollbar.js';
+        document.body.appendChild(script);
 
-      fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-          document.querySelector('footer').innerHTML = data;
-        });
+        document.body.style.visibility = 'visible';
+      });
     });
   </script>
   <script type="text/javascript" src="script.js"></script>
