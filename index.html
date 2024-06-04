@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style> body { visibility: hidden; } </style>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <div class="header">
     <h1><br><br>О Сайте</h1>
@@ -38,13 +39,15 @@
         document.querySelector('header').innerHTML = headerData;
         document.querySelector('#menu').innerHTML = menuData;
         document.querySelector('footer').innerHTML = footerData;
-        
+
         var script = document.createElement('script');
         script.src = 'scrollbar.js';
         document.body.appendChild(script);
+
+        document.body.style.visibility = 'visible';
       });
     });
   </script>
-  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="script.js" async></script>
 </body>
 </html>
