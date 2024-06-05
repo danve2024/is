@@ -26,5 +26,7 @@ function changeTheme() {
   } else {
       body.style.backgroundImage = 'url("images/bg.jpg")';
       body.style.color = 'rgb(0, 0, 50)';
+      footer.style.color = 'black';
+      link.style.color = 'black';
   }
 }
