@@ -9,17 +9,6 @@
     <h1><br><br>Войти как Администратор</h1>
   </div>
   <title>Вход</title>
-</head>
-<body background="images/bg.jpg" id="body">
-  <header></header>
-  <div id="menu"></div>
-  <div class="content">
-    <form action="webpage2.html" method="post">
-      <input type="password" name="secret_code" id="password">
-      <input type="submit" class="login" value="Войти">
-    </form>
-  </div>
-  <footer></footer>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       Promise.all([
@@ -31,14 +20,31 @@
         document.querySelector('#menu').innerHTML = menuData;
         document.querySelector('footer').innerHTML = footerData;
 
-        var script = document.createElement('script');
-        script.src = 'scrollbar.js';
-        document.body.appendChild(script);
-
         document.body.style.visibility = 'visible';
+
+        // Теперь загружаем скрипты
+        var scrollbarScript = document.createElement('script');
+        scrollbarScript.src = 'scrollbar.js';
+        document.body.appendChild(scrollbarScript);
+
+        var otherScript = document.createElement('script');
+        otherScript.src = 'script.js';
+        document.body.appendChild(otherScript);
+      }).catch(error => {
+        console.error("Error in Promise.all:", error);
       });
     });
   </script>
-  <script type="text/javascript" src="script.js"></script>
+</head>
+<body background="images/bg.jpg" id="body">
+  <header></header>
+  <div id="menu"></div>
+  <div class="content">
+    <form action="webpage2.html" method="post">
+      <input type="password" name="secret_code" id="password">
+      <input type="submit" class="login" value="Войти">
+    </form>
+  </div>
+  <footer></footer>
 </body>
 </html>

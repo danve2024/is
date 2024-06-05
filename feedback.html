@@ -9,17 +9,6 @@
     <h1><br><br>Обратная связь</h1>
   </div>
   <title>Обратная связь</title>
-</head>
-<body background="images/bg.jpg" id="body">
-  <header></header>
-  <div id="menu"></div>
-  <div class="content">
-    <div class="details-box"><b><a href="https://docs.google.com/forms/d/1whUU0jNJ7okEWVPFwEHBu_9U17YuwfLZdCWPqj7aFRU/edit#responses" style="color: rgba(0, 0, 0, 0.7);">Обратная связь по сайту</a></b></div>
-    <div class="details-box"><b><a href="mailto: daria.lazareva@letovo.ru" style="color: rgba(0, 0, 0, 0.7);">Связь с карьерным консультантом</a></b></div>
-    <div class="details-box"><b><a href="https://t.me/danywell777" style="color: rgba(0, 0, 0, 0.7);">Связь с основным разработчиком</a></b></div>
-    <p><br><br></p>
-  </div>
-  <footer></footer>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       Promise.all([
@@ -31,14 +20,31 @@
         document.querySelector('#menu').innerHTML = menuData;
         document.querySelector('footer').innerHTML = footerData;
 
-        var script = document.createElement('script');
-        script.src = 'scrollbar.js';
-        document.body.appendChild(script);
-
         document.body.style.visibility = 'visible';
+
+        // Теперь загружаем скрипты
+        var scrollbarScript = document.createElement('script');
+        scrollbarScript.src = 'scrollbar.js';
+        document.body.appendChild(scrollbarScript);
+
+        var otherScript = document.createElement('script');
+        otherScript.src = 'script.js';
+        document.body.appendChild(otherScript);
+      }).catch(error => {
+        console.error("Error in Promise.all:", error);
       });
     });
   </script>
-  <script type="text/javascript" src="script.js"></script>
+</head>
+<body background="images/bg.jpg" id="body">
+  <header></header>
+  <div id="menu"></div>
+  <div class="content">
+    <div class="details-box"><b><a href="https://docs.google.com/forms/d/1whUU0jNJ7okEWVPFwEHBu_9U17YuwfLZdCWPqj7aFRU/edit#responses" style="color: rgba(0, 0, 0, 0.7);">Обратная связь по сайту</a></b></div>
+    <div class="details-box"><b><a href="mailto: daria.lazareva@letovo.ru" style="color: rgba(0, 0, 0, 0.7);">Связь с карьерным консультантом</a></b></div>
+    <div class="details-box"><b><a href="https://t.me/danywell777" style="color: rgba(0, 0, 0, 0.7);">Связь с основным разработчиком</a></b></div>
+    <p><br><br></p>
+  </div>
+  <footer></footer>
 </body>
 </html>

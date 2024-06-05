@@ -9,6 +9,32 @@
     <h1><br><br>АНО “Проектный офис по развитию туризма и гостеприимства Москвы” </h1>
   </div>
   <title>Проектный офис по развитию туризма и гостеприимства Москвы</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      Promise.all([
+        fetch('header.html').then(response => response.text()),
+        fetch('menu.html').then(response => response.text()),
+        fetch('footer.html').then(response => response.text())
+      ]).then(([headerData, menuData, footerData]) => {
+        document.querySelector('header').innerHTML = headerData;
+        document.querySelector('#menu').innerHTML = menuData;
+        document.querySelector('footer').innerHTML = footerData;
+
+        document.body.style.visibility = 'visible';
+
+        // Теперь загружаем скрипты
+        var scrollbarScript = document.createElement('script');
+        scrollbarScript.src = 'scrollbar.js';
+        document.body.appendChild(scrollbarScript);
+
+        var otherScript = document.createElement('script');
+        otherScript.src = 'script.js';
+        document.body.appendChild(otherScript);
+      }).catch(error => {
+        console.error("Error in Promise.all:", error);
+      });
+    });
+  </script>
 </head>
 <body background="images/bg.jpg" id="body">
   <header></header>
@@ -23,25 +49,5 @@
     </div>
   </div>
   <footer></footer>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      Promise.all([
-        fetch('header.html').then(response => response.text()),
-        fetch('menu.html').then(response => response.text()),
-        fetch('footer.html').then(response => response.text())
-      ]).then(([headerData, menuData, footerData]) => {
-        document.querySelector('header').innerHTML = headerData;
-        document.querySelector('#menu').innerHTML = menuData;
-        document.querySelector('footer').innerHTML = footerData;
-
-        var script = document.createElement('script');
-        script.src = 'scrollbar.js';
-        document.body.appendChild(script);
-
-        document.body.style.visibility = 'visible';
-      });
-    });
-  </script>
-  <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
