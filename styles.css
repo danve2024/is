@@ -547,3 +547,16 @@ footer {
     color: black;
     margin: 0 5px;
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-image: url("images/bg_dark.jpg");
+        color: white;
+    }
+    .footer-separator {
+        color: white;
+    }
+    .footer-link {
+        color: white;
+    }
+}
