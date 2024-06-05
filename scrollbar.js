@@ -16,7 +16,13 @@ function updateProgressBar() {
   myBar.style.width = scrolled + "%";
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  window.addEventListener("scroll", updateProgressBar);
+// Проверяем, полностью ли загружен DOM
+if (document.readyState === 'loading') {
+  document.addEventListener("DOMContentLoaded", function() {
+    window.addEventListener('scroll', updateProgressBar);
+    updateProgressBar();
+  });
+} else {
+  window.addEventListener('scroll', updateProgressBar);
   updateProgressBar();
-});
+}
