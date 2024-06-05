@@ -1,15 +1,28 @@
-window.onscroll = function() {updateProgressBar()};
-
 function updateProgressBar() {
+  var myBar = document.getElementById("myBar");
+  if (!myBar) {
+    console.log("myBar not found");
+    return;
+  }
+  
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   var scrolled = (winScroll / height) * 100;
 
-  if (height <= 0) {
-    scrolled = 100; // Если нет прокрутки, прогресс-бар заполнен на 100%
-  }
+  if (height <= 0) { scrolled = 100; }
 
+  console.log("Scrolled:", scrolled, "%");
   document.getElementById("myBar").style.width = scrolled + "%";
+  myBar.style.width = scrolled + "%";
 }
 
-document.addEventListener("DOMContentLoaded", updateProgressBar);
+// Проверяем, полностью ли загружен DOM
+if (document.readyState === 'loading') {
+  document.addEventListener("DOMContentLoaded", function() {
+    window.addEventListener('scroll', updateProgressBar);
+    updateProgressBar();
+  });
+} else {
+  window.addEventListener('scroll', updateProgressBar);
+  updateProgressBar();
+}
