@@ -1,4 +1,5 @@
 function updateProgressBar() {
+  console.log("updateProgressBar called");
   var myBar = document.getElementById("myBar");
   if (!myBar) {
     return; // Если элемента нет, выходим из функции

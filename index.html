@@ -31,6 +31,7 @@
   <footer></footer>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
+      console.log("Fetching header, menu, and footer");
       Promise.all([
         fetch('header.html').then(response => response.text()),
         fetch('menu.html').then(response => response.text()),
