@@ -20,9 +20,9 @@ function updateProgressBar() {
 
 document.addEventListener("DOMContentLoaded", function() {
   console.log("DOMContentLoaded event");
-  window.onscroll = function() {
+  window.addEventListener("scroll", function() {
       console.log("onscroll event");
       updateProgressBar();
-  };
+  });
   updateProgressBar();
 });
