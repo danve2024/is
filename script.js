@@ -12,7 +12,6 @@ function toggleMenu() {
 // Светлая/тёмная тема
 function changeTheme() {
   const body = document.getElementById('body');
-  const computedStyle = getComputedStyle(body);
   const footer = document.getElementById('footer-separator');
   const link = document.getElementById('footer-link');
   const currentState = computedStyle.backgroundImage;
@@ -20,13 +19,13 @@ function changeTheme() {
   if (currentState.includes('bg.jpg')) {
       body.style.backgroundImage = 'url("images/bg_dark.jpg")';
       body.style.color = 'white';
-      footer.style.color = 'white';
-      link.style.color = 'white';
+      footer.color = 'white';
+      link.color = 'white';
       
   } else {
       body.style.backgroundImage = 'url("images/bg.jpg")';
       body.style.color = 'rgb(0, 0, 50)';
-      footer.style.color = 'black';
-      link.style.color = 'black';
+      footer.color = 'black';
+      link.color = 'black';
   }
 }
