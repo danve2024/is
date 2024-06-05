@@ -11,7 +11,6 @@ function updateProgressBar() {
 
   if (height <= 0) { scrolled = 100; }
 
-  console.log("Scrolled:", scrolled, "%");
   document.getElementById("myBar").style.width = scrolled + "%";
   myBar.style.width = scrolled + "%";
 }
