@@ -2,7 +2,8 @@ function updateProgressBar() {
   console.log("updateProgressBar called");
   var myBar = document.getElementById("myBar");
   if (!myBar) {
-    return; // Если элемента нет, выходим из функции
+    console.log("myBar not found");
+    return;
   }
   
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -15,6 +16,7 @@ function updateProgressBar() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+  console.log("DOMContentLoaded event");
   window.onscroll = function() {
       updateProgressBar();
   };
