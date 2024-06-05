@@ -41,13 +41,15 @@
         document.querySelector('#menu').innerHTML = menuData;
         document.querySelector('footer').innerHTML = footerData;
 
-        var script = document.createElement('script');
-        script.src = 'scrollbar.js';
-        script.onload = function() {
-          console.log("Scrollbar script loaded");
-          updateProgressBar();
-        };
-        document.body.appendChild(script);
+        // Первый скрипт, который должен быть загружен и выполнен
+        var scrollbarScript = document.createElement('script');
+        scrollbarScript.src = 'scrollbar.js';
+        document.body.appendChild(scrollbarScript);
+
+        // Второй скрипт, который должен следовать за первым
+        var otherScript = document.createElement('script');
+        otherScript.src = 'script.js';
+        document.body.appendChild(otherScript);
 
         document.body.style.visibility = 'visible';
       }).catch(error => {
@@ -55,6 +57,5 @@
       });
     });
   </script>
-  <script type="text/javascript" src="script.js" async></script>
 </body>
 </html>
