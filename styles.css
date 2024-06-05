@@ -178,21 +178,10 @@ select {
 .menu_item {
     font-size: 30px;
     color: white;
-    filter: blur(1px);
     padding-left: 50px;
     text-align: left;
     line-height: 70px;
     transition: all 1s ease;
-}
-
-@media only screen and (max-width: 768px) {
-  .menu_item {
-      filter: blur(0);
-  }
-}
-
-.menu_item:hover {
-    filter: blur(0);
 }
 
 #menu {
