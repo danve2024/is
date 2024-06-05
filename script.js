@@ -12,6 +12,7 @@ function toggleMenu() {
 // Светлая/тёмная тема
 function changeTheme() {
   const body = document.getElementById('body');
+  const computedStyle = getComputedStyle(body);
   const footer = document.getElementById('footer-separator');
   const link = document.getElementById('footer-link');
   const currentState = computedStyle.backgroundImage;
