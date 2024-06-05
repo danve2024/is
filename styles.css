@@ -10,7 +10,6 @@
 }
 
 body {
-    cursor: url('images/cursor.png'), auto;
     background-image: url('images/bg.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
