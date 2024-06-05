@@ -1,12 +1,10 @@
 function updateProgressBar() {
-  console.log("updateProgressBar called");
   var myBar = document.getElementById("myBar");
   if (!myBar) {
     console.log("myBar not found");
     return;
   }
-  console.log("myBar found");
-
+  
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   var scrolled = (winScroll / height) * 100;
@@ -19,10 +17,6 @@ function updateProgressBar() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  console.log("DOMContentLoaded event");
-  window.addEventListener("scroll", function() {
-      console.log("onscroll event");
-      updateProgressBar();
-  });
+  window.addEventListener("scroll", updateProgressBar);
   updateProgressBar();
 });
